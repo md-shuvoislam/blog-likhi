@@ -113,6 +113,42 @@ function blog_likhi_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'About Us', 'blog-likhi' ),
+		'id'            => 'about-us',
+		'description'   => esc_html__( 'Add widgets here.', 'blog-likhi' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Recent Post', 'blog-likhi' ),
+		'id'            => 'recent-post',
+		'description'   => esc_html__( 'Add widgets here.', 'blog-likhi' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Categories', 'blog-likhi' ),
+		'id'            => 'categories',
+		'description'   => esc_html__( 'Add widgets here.', 'blog-likhi' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Search Our Site', 'blog-likhi' ),
+		'id'            => 'search-site',
+		'description'   => esc_html__( 'Add widgets here.', 'blog-likhi' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'blog_likhi_widgets_init' );
 
@@ -120,11 +156,21 @@ add_action( 'widgets_init', 'blog_likhi_widgets_init' );
  * Enqueue scripts and styles.
  */
 function blog_likhi_scripts() {
+
+	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
+	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css');
+	wp_enqueue_style( 'blog-likhi-font-family', get_stylesheet_uri('https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap') );
+
 	wp_enqueue_style( 'blog-likhi-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'blog-likhi-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
+	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery' ), '', true);
+
 	wp_enqueue_script( 'blog-likhi-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'blog-likhi-script', get_template_directory_uri() . '/assets/js/active.js', array(), $version, true );
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

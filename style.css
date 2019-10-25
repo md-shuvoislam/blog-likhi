@@ -59,6 +59,8 @@ html {
 	-webkit-text-size-adjust: 100%; /* 2 */
 }
 
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap');
+
 /* Sections
 	 ========================================================================== */
 
@@ -100,7 +102,7 @@ hr {
  */
 
 pre {
-	font-family: monospace, monospace; /* 1 */
+	font-family: 'Ubuntu', sans-serif; /* 1 */
 	font-size: 1em; /* 2 */
 }
 
@@ -143,7 +145,7 @@ strong {
 code,
 kbd,
 samp {
-	font-family: monospace, monospace; /* 1 */
+	font-family: 'Ubuntu', sans-serif; /* 1 */
 	font-size: 1em; /* 2 */
 }
 
@@ -200,7 +202,7 @@ input,
 optgroup,
 select,
 textarea {
-	font-family: inherit; /* 1 */
+	font-family: 'Ubuntu', sans-serif; /* 1 */
 	font-size: 100%; /* 1 */
 	line-height: 1.15; /* 1 */
 	margin: 0; /* 2 */
@@ -396,7 +398,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -424,7 +426,7 @@ address {
 
 pre {
 	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-family: 'Ubuntu', sans-serif;
 	font-size: 15px;
 	font-size: 0.9375rem;
 	line-height: 1.6;
@@ -435,7 +437,7 @@ pre {
 }
 
 code, kbd, tt, var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-family: 'Ubuntu', sans-serif;
 	font-size: 15px;
 	font-size: 0.9375rem;
 }
